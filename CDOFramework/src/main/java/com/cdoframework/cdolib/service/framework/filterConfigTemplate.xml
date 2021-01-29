@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--示例 XML 文件由 XMLSpy v2006 U 创建 (http://www.altova.com)-->
-<FiltersConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../Design/schema/FiltersConfig.xsd">	
-	<FilterConfig Id="goodsFilter" Resource="com/cdoframework/cdolib/service/framework/GoodsFilter.xml"></FilterConfig>
-</FiltersConfig>

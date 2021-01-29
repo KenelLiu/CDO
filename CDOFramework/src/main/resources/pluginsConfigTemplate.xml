@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<PluginsConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Design/PluginsConfig.xsd" >	
-	<!-- 配置具体的开发   service plugin-->
-	<PluginXMLResource>com/cos/service/ocn/admin/base/Plugin.xml</PluginXMLResource>
-	<PluginXMLResource>com/cos/service/ocn/admin/active/ActivePlugin.xml</PluginXMLResource>
-</PluginsConfig>

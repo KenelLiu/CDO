@@ -1,9 +1,0 @@
-#Tue May 24 12:18:58 CST 2016
-com.cdoframework.cdolib.service.framework.xsd.FilterConfig=com.cdoframework.cdolib.service.framework.xsd.descriptors.FilterConfigDescriptor
-com.cdoframework.cdolib.service.framework.xsd.CacheServer=com.cdoframework.cdolib.service.framework.xsd.descriptors.CacheServerDescriptor
-com.cdoframework.cdolib.service.framework.xsd.Server=com.cdoframework.cdolib.service.framework.xsd.descriptors.ServerDescriptor
-com.cdoframework.cdolib.service.framework.xsd.Parameter=com.cdoframework.cdolib.service.framework.xsd.descriptors.ParameterDescriptor
-com.cdoframework.cdolib.service.framework.xsd.MemcacheType=com.cdoframework.cdolib.service.framework.xsd.descriptors.MemcacheTypeDescriptor
-com.cdoframework.cdolib.service.framework.xsd.URLCacheServer=com.cdoframework.cdolib.service.framework.xsd.descriptors.URLCacheServerDescriptor
-com.cdoframework.cdolib.service.framework.xsd.MemCacheServerGroup=com.cdoframework.cdolib.service.framework.xsd.descriptors.MemCacheServerGroupDescriptor
-com.cdoframework.cdolib.service.framework.xsd.Framework=com.cdoframework.cdolib.service.framework.xsd.descriptors.FrameworkDescriptor

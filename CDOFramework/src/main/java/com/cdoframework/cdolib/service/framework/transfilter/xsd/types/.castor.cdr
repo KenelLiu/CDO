@@ -1,9 +1,0 @@
-#Tue May 24 12:26:45 CST 2016
-com.cdoframework.cdolib.service.framework.transfilter.xsd.types.RequestKeyScopeType=com.cdoframework.cdolib.service.framework.transfilter.xsd.types.descriptors.RequestKeyScopeTypeDescriptor
-com.cdoframework.cdolib.service.framework.transfilter.xsd.types.CriteriaTypeOperatorType=com.cdoframework.cdolib.service.framework.transfilter.xsd.types.descriptors.CriteriaTypeOperatorTypeDescriptor
-com.cdoframework.cdolib.service.framework.transfilter.xsd.types.ReturnCodeOperatorType=com.cdoframework.cdolib.service.framework.transfilter.xsd.types.descriptors.ReturnCodeOperatorTypeDescriptor
-com.cdoframework.cdolib.service.framework.transfilter.xsd.types.CreteriasTypeItemTypeType=com.cdoframework.cdolib.service.framework.transfilter.xsd.types.descriptors.CreteriasTypeItemTypeTypeDescriptor
-com.cdoframework.cdolib.service.framework.transfilter.xsd.types.CacheURLTypeType=com.cdoframework.cdolib.service.framework.transfilter.xsd.types.descriptors.CacheURLTypeTypeDescriptor
-com.cdoframework.cdolib.service.framework.transfilter.xsd.types.RequestKeyTypeType=com.cdoframework.cdolib.service.framework.transfilter.xsd.types.descriptors.RequestKeyTypeTypeDescriptor
-com.cdoframework.cdolib.service.framework.transfilter.xsd.types.CacheKeyTypeTypeType=com.cdoframework.cdolib.service.framework.transfilter.xsd.types.descriptors.CacheKeyTypeTypeTypeDescriptor
-com.cdoframework.cdolib.service.framework.transfilter.xsd.types.CriteriaTypeTypeType=com.cdoframework.cdolib.service.framework.transfilter.xsd.types.descriptors.CriteriaTypeTypeTypeDescriptor
