@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by XXXXXX (ORiON) -->
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by any (Ru-Board) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="SetVar">
+		<xs:complexType>
+			<xs:attribute name="Type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Byte"/>
+						<xs:enumeration value="Short"/>
+						<xs:enumeration value="Integer"/>
+						<xs:enumeration value="Long"/>
+						<xs:enumeration value="Float"/>
+						<xs:enumeration value="Double"/>
+						<xs:enumeration value="String"/>
+						<xs:enumeration value="Date"/>
+						<xs:enumeration value="Time"/>
+						<xs:enumeration value="DateTime"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="VarId" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Value" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SQLIf">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="SQLThen" type="SQLBlockType" minOccurs="0"/>
+				<xs:element name="SQLElse" type="SQLBlockType" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="Value1" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Operator" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="="/>
+						<xs:enumeration value="!="/>
+						<xs:enumeration value="&gt;"/>
+						<xs:enumeration value="&gt;="/>
+						<xs:enumeration value="&lt;"/>
+						<xs:enumeration value="&lt;="/>
+						<xs:enumeration value="IS"/>
+						<xs:enumeration value="ISNOT"/>
+						<xs:enumeration value="MATCH"/>
+						<xs:enumeration value="NOTMATCH"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Value2" type="xs:string" use="required"/>
+			<xs:attribute name="Type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Boolean"/>
+						<xs:enumeration value="Byte"/>
+						<xs:enumeration value="Short"/>
+						<xs:enumeration value="Integer"/>
+						<xs:enumeration value="Long"/>
+						<xs:enumeration value="Float"/>
+						<xs:enumeration value="Double"/>
+						<xs:enumeration value="String"/>
+						<xs:enumeration value="Date"/>
+						<xs:enumeration value="Time"/>
+						<xs:enumeration value="DateTime"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SQLFor">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="SQLBlockType">
+					<xs:attribute name="IndexId" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+								<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\}"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="FromIndex" use="optional" default="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="([0-9]{1,9})|(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\})"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="Count" use="optional">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="([0-9]{1,9})|(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\})"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="ArrKey" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+								<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\}"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="SQLBlockType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="OutputSQL">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="OutputField">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="SQLIf"/>
+			<xs:element ref="SQLFor"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="SelectRecordSet">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="SQLBlockType">
+					<xs:attribute name="OutputId" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\}"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="KeyFieldName" use="optional" default="">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*)?"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="RecordCountId" use="optional" default="">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\})?"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SelectRecord">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="SQLBlockType">
+					<xs:attribute name="OutputId" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+								<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\}"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="RecordCountId" use="optional" default="">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\})?"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SelectField">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="SQLBlockType">
+					<xs:attribute name="OutputId" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+								<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\}"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Insert" type="SQLBlockType"/>
+	<xs:element name="Update">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="SQLBlockType">
+					<xs:attribute name="RecordCountId" use="optional" default="">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\})?"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Delete">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="SQLBlockType">
+					<xs:attribute name="RecordCountId" use="optional" default="">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\})?"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SelectConnection">
+		<xs:complexType>
+			<xs:attribute name="BigTableName" type="xs:string" use="optional" default=""/>
+			<xs:attribute name="IdFieldId" use="optional" default="">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\})*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Commit"/>
+	<xs:element name="Rollback"/>
+	<xs:complexType name="BlockType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="Insert"/>
+			<xs:element ref="Update"/>
+			<xs:element ref="Delete"/>
+			<xs:element ref="SelectRecordSet"/>
+			<xs:element ref="SelectRecord"/>
+			<xs:element ref="SelectField"/>
+			<xs:element ref="SetVar"/>
+			<xs:element ref="If"/>
+			<xs:element ref="For"/>
+			<xs:element ref="Return"/>
+			<xs:element ref="Break"/>
+			<xs:element ref="SelectConnection"/>
+			<xs:element ref="Commit"/>
+			<xs:element ref="Rollback"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="Break"/>
+	<xs:element name="For">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="BlockType">
+					<xs:attribute name="IndexId" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+								<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\}"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="FromIndex" use="optional" default="0">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="([0-9]{1,9})|(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\})"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="Count" use="optional">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="([0-9]{1,9})|(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\})"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="ArrKey" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+								<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\}"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="If">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Then" type="BlockType" minOccurs="0"/>
+				<xs:element name="Else" type="BlockType" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="Value1" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Operator" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="="/>
+						<xs:enumeration value="!="/>
+						<xs:enumeration value="&gt;"/>
+						<xs:enumeration value="&gt;="/>
+						<xs:enumeration value="&lt;"/>
+						<xs:enumeration value="&lt;="/>
+						<xs:enumeration value="IS"/>
+						<xs:enumeration value="ISNOT"/>
+						<xs:enumeration value="MATCH"/>
+						<xs:enumeration value="NOTMATCH"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Value2" type="xs:string" use="optional" default=""/>
+			<xs:attribute name="Type" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Boolean"/>
+						<xs:enumeration value="Byte"/>
+						<xs:enumeration value="Short"/>
+						<xs:enumeration value="Integer"/>
+						<xs:enumeration value="Long"/>
+						<xs:enumeration value="Float"/>
+						<xs:enumeration value="Double"/>
+						<xs:enumeration value="String"/>
+						<xs:enumeration value="Date"/>
+						<xs:enumeration value="Time"/>
+						<xs:enumeration value="DateTime"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ReturnItem">
+		<xs:complexType>
+			<xs:attribute name="FieldId" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ValueId" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|\.|\[|\])*\}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Return">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ReturnItem" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="Code" type="xs:int" use="required"/>
+			<xs:attribute name="Info" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Text" use="optional" default="OK">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OnError">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Return"/>
+			</xs:sequence>
+			<xs:attribute name="Code" type="xs:int" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OnException">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="OnError" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Return"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SQLTrans">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="Insert"/>
+					<xs:element ref="Update"/>
+					<xs:element ref="Delete"/>
+					<xs:element ref="SelectField"/>
+					<xs:element ref="SelectRecord"/>
+					<xs:element ref="SelectRecordSet"/>
+					<xs:element ref="If"/>
+					<xs:element ref="For"/>
+					<xs:element ref="SetVar"/>
+					<xs:element ref="SelectConnection"/>
+					<xs:element ref="Commit"/>
+					<xs:element ref="Rollback"/>
+				</xs:choice>
+				<xs:element ref="OnException"/>
+				<xs:element ref="Return"/>
+			</xs:sequence>
+			<xs:attribute name="TransName" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+						<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.)*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="TransFlag" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:int">
+						<xs:enumeration value="0"/>
+						<xs:enumeration value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="DataGroupId" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*)*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="BigTableGroupId" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*)*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ZkId" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DataService">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:choice maxOccurs="unbounded">
+					<xs:element ref="SQLTrans"/>
+					<xs:element name="NoSQLTrans" type="NoSQLTransType"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="DataGroupId" use="optional" default="">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*)*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="NoSQLDBId" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*)*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="FieldType">
+		<xs:attribute name="Name" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:pattern value="([a-z]|[A-Z]|_)([a-z]|[A-Z]|[0-9]|_|.)*"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Type" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Boolean"/>
+					<xs:enumeration value="BooleanArray"/>
+					<xs:enumeration value="Byte"/>
+					<xs:enumeration value="ByteArray"/>
+					<xs:enumeration value="Short"/>
+					<xs:enumeration value="ShortArray"/>
+					<xs:enumeration value="Integer"/>
+					<xs:enumeration value="IntegerArray"/>
+					<xs:enumeration value="Long"/>
+					<xs:enumeration value="LongArray"/>
+					<xs:enumeration value="Float"/>
+					<xs:enumeration value="FloatArray"/>
+					<xs:enumeration value="Double"/>
+					<xs:enumeration value="DoubleArray"/>
+					<xs:enumeration value="String"/>
+					<xs:enumeration value="StringArray"/>
+					<xs:enumeration value="Date"/>
+					<xs:enumeration value="DateArray"/>
+					<xs:enumeration value="Time"/>
+					<xs:enumeration value="TimeArray"/>
+					<xs:enumeration value="DateTime"/>
+					<xs:enumeration value="DateTimeArray"/>
+					<xs:enumeration value="CDO"/>
+					<xs:enumeration value="CDOArray"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="CriteriaType">
+		<xs:attribute name="Operator" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="="/>
+					<xs:enumeration value="!="/>
+					<xs:enumeration value="&gt;"/>
+					<xs:enumeration value="&gt;="/>
+					<xs:enumeration value="&lt;"/>
+					<xs:enumeration value="&lt;="/>
+					<xs:enumeration value="ISNULL"/>
+					<xs:enumeration value="ISNOTNULL"/>
+					<xs:enumeration value="MATCH"/>
+					<xs:enumeration value="NOTMATCH"/>
+					<xs:enumeration value="IN"/>
+					<xs:enumeration value="NOTIN"/>
+					<xs:enumeration value="EXISTS"/>
+					<xs:enumeration value="NOTEXISTS"/>
+					<xs:enumeration value="MATCHALL"/>
+					<xs:enumeration value="MATCHRIGHT"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Value" type="xs:string"/>
+		<xs:attribute name="Type" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Boolean"/>
+					<xs:enumeration value="BooleanArray"/>
+					<xs:enumeration value="Byte"/>
+					<xs:enumeration value="ByteArray"/>
+					<xs:enumeration value="Short"/>
+					<xs:enumeration value="ShortArray"/>
+					<xs:enumeration value="Integer"/>
+					<xs:enumeration value="IntegerArray"/>
+					<xs:enumeration value="Long"/>
+					<xs:enumeration value="LongArray"/>
+					<xs:enumeration value="Float"/>
+					<xs:enumeration value="FloatArray"/>
+					<xs:enumeration value="Double"/>
+					<xs:enumeration value="DoubleArray"/>
+					<xs:enumeration value="String"/>
+					<xs:enumeration value="StringArray"/>
+					<xs:enumeration value="Date"/>
+					<xs:enumeration value="DateArray"/>
+					<xs:enumeration value="Time"/>
+					<xs:enumeration value="TimeArray"/>
+					<xs:enumeration value="DateTime"/>
+					<xs:enumeration value="DateTimeArray"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="CreteriasType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="Creteria">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="CriteriaType">
+							<xs:sequence minOccurs="0">
+								<xs:element name="And" type="CriteriaType" maxOccurs="unbounded"/>
+							</xs:sequence>
+							<xs:attribute name="Name" use="required">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:pattern value="([a-z]|[A-Z]|_)([a-z]|[A-Z]|[0-9]|.)*"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+							<xs:attribute name="ValueRequired" type="xs:boolean" use="optional" default="false"/>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Creterias" type="CreteriasType"/>
+		</xs:choice>
+		<xs:attribute name="Type" type="xs:string" default="AND"/>
+	</xs:complexType>
+	<xs:complexType name="CollectionNameType">
+		<xs:attribute name="DBServerId" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_)*"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="DBName" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_)*"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="CollectionName" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_)*"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="NoSQLTransType">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="Add">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="CollectionNameType">
+								<xs:sequence>
+									<xs:element name="AddField" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:complexContent>
+												<xs:extension base="FieldType">
+													<xs:attribute name="Value" type="xs:string" use="optional"/>
+													<xs:attribute name="ValueRequired" type="xs:boolean" use="optional" default="false"/>
+													<xs:attribute name="DefaultValue" type="xs:string" use="optional"/>
+												</xs:extension>
+											</xs:complexContent>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Remove">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="CollectionNameType">
+								<xs:sequence minOccurs="0">
+									<xs:element name="Creterias" type="CreteriasType"/>
+								</xs:sequence>
+								<xs:attribute name="RecordCountId">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.|\[|\])*\})?"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Modify">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="CollectionNameType">
+								<xs:sequence>
+									<xs:element name="ModifyField" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:complexContent>
+												<xs:extension base="FieldType">
+													<xs:attribute name="Value" type="xs:string" use="required"/>
+													<xs:attribute name="Method" use="optional">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:enumeration value="inc"/>
+																<xs:enumeration value="set"/>
+																<xs:enumeration value="unset"/>
+																<xs:enumeration value="push"/>
+																<xs:enumeration value="pushAll"/>
+																<xs:enumeration value="addToSet"/>
+																<xs:enumeration value="pop"/>
+																<xs:enumeration value="pull"/>
+																<xs:enumeration value="pullAll"/>
+																<xs:enumeration value="setnull"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+													<xs:attribute name="ValueRequired" type="xs:boolean" use="optional" default="false"/>
+												</xs:extension>
+											</xs:complexContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Creterias" type="CreteriasType" minOccurs="0"/>
+								</xs:sequence>
+								<xs:attribute name="RecordCountId">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.|\[|\])*\})?"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="multiLine" type="xs:boolean" use="optional" default="true"/>
+								<xs:attribute name="insert" type="xs:boolean" use="optional" default="false"/>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Replace">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="CollectionNameType">
+								<xs:sequence>
+									<xs:element name="ReplaceField" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:complexContent>
+												<xs:extension base="FieldType">
+													<xs:attribute name="Value" type="xs:string" use="required"/>
+													<xs:attribute name="ValueRequired" type="xs:boolean" use="optional" default="false"/>
+												</xs:extension>
+											</xs:complexContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Creterias" type="CreteriasType"/>
+								</xs:sequence>
+								<xs:attribute name="RecordCountId" type="xs:string"/>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="QueryRecordSet">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="CollectionNameType">
+								<xs:sequence minOccurs="0">
+									<xs:element name="QField" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:complexContent>
+												<xs:extension base="FieldType">
+													<xs:attribute name="Value" type="xs:string" use="optional"/>
+													<xs:attribute name="Alias" use="optional">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_)*"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+													<xs:attribute name="function" type="xs:string" use="optional"/>
+												</xs:extension>
+											</xs:complexContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Creterias" type="CreteriasType" minOccurs="0"/>
+									<xs:element name="Order" type="OrderType" minOccurs="0" maxOccurs="unbounded"/>
+									<xs:element name="Scope" type="ScopeType" minOccurs="0"/>
+									<xs:element name="Group" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:attribute name="FieldName" use="required">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:minLength value="1"/>
+														<xs:pattern value="([a-z]|[A-Z]|_)([a-z]|[A-Z]|[0-9]|_)*"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:attribute>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attribute name="OutputId" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.|\[|\])*\}"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="KeyFieldName" use="optional" default="">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_)*)?"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="RecordCountId">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.|\[|\])*\})?"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="QueryRecord">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="CollectionNameType">
+								<xs:sequence minOccurs="0">
+									<xs:element name="QField" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:complexContent>
+												<xs:extension base="FieldType">
+													<xs:attribute name="Value" type="xs:string" use="optional"/>
+													<xs:attribute name="Alias" use="optional">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_)*"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+													<xs:attribute name="function" type="xs:string" use="optional"/>
+												</xs:extension>
+											</xs:complexContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Creterias" type="CreteriasType" minOccurs="0"/>
+									<xs:element name="Order" type="OrderType" minOccurs="0" maxOccurs="unbounded"/>
+									<xs:element name="Group" minOccurs="0" maxOccurs="unbounded">
+										<xs:complexType>
+											<xs:attribute name="FieldName" use="required">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:minLength value="1"/>
+														<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_)*"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:attribute>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attribute name="OutputId" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.|\[|\])*\}"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="RecordCountId">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.|\[|\])*\})?"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="QueryField">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="CollectionNameType">
+								<xs:sequence>
+									<xs:element name="QField">
+										<xs:complexType>
+											<xs:complexContent>
+												<xs:extension base="FieldType">
+													<xs:attribute name="Value" type="xs:string" use="optional"/>
+													<xs:attribute name="Alias" use="optional">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="1"/>
+																<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_)*"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:attribute>
+													<xs:attribute name="function" type="xs:string" use="optional"/>
+												</xs:extension>
+											</xs:complexContent>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="Creterias" type="CreteriasType" minOccurs="0"/>
+									<xs:element name="Order" type="OrderType" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+								<xs:attribute name="OutputId" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.|\[|\])*\}"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+								<xs:attribute name="RecordCountId">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.|\[|\])*\})?"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="QueryCount">
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="CollectionNameType">
+								<xs:sequence>
+									<xs:element name="Creterias" type="CreteriasType" minOccurs="0"/>
+								</xs:sequence>
+								<xs:attribute name="OutputId" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.|\[|\])*\}"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:extension>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+			<xs:element ref="OnException"/>
+			<xs:element ref="Return"/>
+		</xs:sequence>
+		<xs:attribute name="TransName" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.)*"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Value1" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.|\[|\])*\}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Operator" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="="/>
+					<xs:enumeration value="!="/>
+					<xs:enumeration value="&gt;"/>
+					<xs:enumeration value="&gt;="/>
+					<xs:enumeration value="&lt;"/>
+					<xs:enumeration value="&lt;="/>
+					<xs:enumeration value="IS"/>
+					<xs:enumeration value="ISNOT"/>
+					<xs:enumeration value="MATCH"/>
+					<xs:enumeration value="NOTMATCH"/>
+					<xs:enumeration value="IN"/>
+					<xs:enumeration value="NOTIN"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Value2" type="xs:string"/>
+		<xs:attribute name="Type" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Byte"/>
+					<xs:enumeration value="Short"/>
+					<xs:enumeration value="Integer"/>
+					<xs:enumeration value="Long"/>
+					<xs:enumeration value="Float"/>
+					<xs:enumeration value="Double"/>
+					<xs:enumeration value="String"/>
+					<xs:enumeration value="Date"/>
+					<xs:enumeration value="Time"/>
+					<xs:enumeration value="DateTime"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="OrderType">
+		<xs:attribute name="FieldName" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:pattern value="([a-z]|[A-Z]|_)([a-z]|[A-Z]|[0-9]|_)*|\{([a-z]|[A-Z]|_)([a-z]|[A-Z]|[0-9]|_)*\}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Direction" use="optional" default="1">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:pattern value="(-1|1)|\{([a-z]|[A-Z]|_)([a-z]|[A-Z]|[0-9]|_)*\}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="ScopeType">
+		<xs:attribute name="Skip" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:pattern value="(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.|\[|\])*\}|[0-9]*)"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Limit" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:pattern value="(\{([a-z]|[A-Z])([a-z]|[A-Z]|[0-9]|_|\.|\[|\])*\}|[0-9]*)"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

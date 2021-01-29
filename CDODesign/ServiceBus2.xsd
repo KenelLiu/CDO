@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- 编辑使用 XMLSpy v2006 U (http://www.altova.com) 由 any (any) -->
+<!-- edited with XMLSpy v2005 sp1 U (http://www.xmlspy.com) by any (Ru-Board) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="DataGroup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Database" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="User">
+								<xs:complexType>
+									<xs:attribute name="UserName" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="Password" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Property" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="Name" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:minLength value="1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="Value" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ConnectionPool" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="InitialConnectionCount" type="xs:int" default="1"/>
+										<xs:element name="MaxActiveConnectionCount" type="xs:int" default="5"/>
+										<xs:element name="MinIdleConnectionCount" type="xs:int" default="1" minOccurs="0"/>
+										<xs:element name="MaxIdleConnectionCount" type="xs:int" default="5" minOccurs="0"/>
+										<xs:element name="MaxWaitTime" type="xs:long" default="10000" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="URI" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="LoadLevel" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:int">
+									<xs:minInclusive value="1"/>
+									<xs:maxInclusive value="100"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="Id" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*)*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Driver" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="Charset" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:minLength value="1"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="ClassPath" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ServicePlugin">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Parameter" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="Name" type="xs:string" use="required"/>
+						<xs:attribute name="Value" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="DataGroup" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="NoSQLDB" type="NoSQLDBType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="ServiceConfig" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="Id" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*)*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="ZkId" type="xs:string"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DataService" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="Id" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="Resource" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="TransService" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="Id" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="ClassPath" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ActiveService" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="Id" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="ClassPath" type="xs:string" use="required"/>
+						<xs:attribute name="Clustered" type="xs:boolean" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ServiceBus">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Parameter" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="Name" type="xs:string" use="required"/>
+						<xs:attribute name="Value" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="DataGroup" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="ZkProducer" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="Id" type="xs:string" use="required"/>
+						<xs:attribute name="Connect" type="xs:string" use="required"/>
+						<xs:attribute name="weight" type="xs:int" use="optional" default="1"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ZkConsumer" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="Id" type="xs:string" use="required"/>
+						<xs:attribute name="Connect" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="NoSQLDB" type="NoSQLDBType" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element name="ClusterController" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="DataGroupId" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*)*"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="MaxDeadSecond" type="xs:int" use="optional" default="5"/>
+						<xs:attribute name="PulseSecond" type="xs:int" use="optional" default="2"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="EventProcessor" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="MaxThreadCount" type="xs:int" default="10"/>
+						<xs:attribute name="MinThreadCount" type="xs:int" default="1"/>
+						<xs:attribute name="MaxIdelTreadCount" type="xs:int" default="10"/>
+						<xs:attribute name="MaxWaitEventCount" type="xs:int" default="1000"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="PluginXMLResource" type="xs:string" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="DataGroupId" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*)*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="NoSQLDBId" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*)*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="CriteriaType">
+		<xs:attribute name="Name" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:pattern value="([a-z]|[A-Z]|_)([a-z]|[A-Z]|[0-9]|.)*"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Operator" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="="/>
+					<xs:enumeration value="!="/>
+					<xs:enumeration value="&gt;"/>
+					<xs:enumeration value="&gt;="/>
+					<xs:enumeration value="&lt;"/>
+					<xs:enumeration value="&lt;="/>
+					<xs:enumeration value="ISNULL"/>
+					<xs:enumeration value="ISNOTNULL"/>
+					<xs:enumeration value="MATCH"/>
+					<xs:enumeration value="NOTMATCH"/>
+					<xs:enumeration value="IN"/>
+					<xs:enumeration value="NOTIN"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="Value" type="xs:string"/>
+		<xs:attribute name="Type" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="Boolean"/>
+					<xs:enumeration value="BooleanArray"/>
+					<xs:enumeration value="Byte"/>
+					<xs:enumeration value="ByteArray"/>
+					<xs:enumeration value="Short"/>
+					<xs:enumeration value="ShortArray"/>
+					<xs:enumeration value="Integer"/>
+					<xs:enumeration value="IntegerArray"/>
+					<xs:enumeration value="Long"/>
+					<xs:enumeration value="LongArray"/>
+					<xs:enumeration value="Float"/>
+					<xs:enumeration value="FloatArray"/>
+					<xs:enumeration value="Double"/>
+					<xs:enumeration value="DoubleArray"/>
+					<xs:enumeration value="String"/>
+					<xs:enumeration value="StringArray"/>
+					<xs:enumeration value="Date"/>
+					<xs:enumeration value="DateArray"/>
+					<xs:enumeration value="Time"/>
+					<xs:enumeration value="TimeArray"/>
+					<xs:enumeration value="DateTime"/>
+					<xs:enumeration value="DateTimeArray"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="ValueRequired" type="xs:boolean" use="optional" default="false"/>
+	</xs:complexType>
+	<xs:complexType name="CreteriasType">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element name="Creteria" type="CriteriaType"/>
+			<xs:element name="Creterias" type="CreteriasType"/>
+		</xs:choice>
+		<xs:attribute name="Type" default="AND">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="AND"/>
+					<xs:enumeration value="OR"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="NoSQLDBType">
+		<xs:sequence>
+			<xs:element name="PoolConfig" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="size" type="xs:int" default="10"/>
+					<xs:attribute name="maxBlockPerConn" type="xs:int" default="5"/>
+					<xs:attribute name="maxWaitTime" type="xs:int" default="120000"/>
+					<xs:attribute name="connectTimeout" type="xs:int" default="0"/>
+					<xs:attribute name="socketTimeout" type="xs:int" default="0"/>
+					<xs:attribute name="autoConnectRetry" type="xs:boolean" default="false"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ServerAddr" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="IP" type="xs:string" use="required"/>
+					<xs:attribute name="Port" type="xs:int" use="optional" default="27017"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DBConfig" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="DBName" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="UserName" type="xs:string"/>
+					<xs:attribute name="Password" type="xs:string"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="Id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:pattern value="(([a-z]|[A-Z])([a-z]|[A-Z]|[0-9])*)*"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>
